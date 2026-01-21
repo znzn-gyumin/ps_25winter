@@ -1,9 +1,52 @@
 # ps_25winter
 
+## 목차
+[week 1](#week-1)
+[week 2](#week-2)
+
 ### week 1
 
 ##### 2783(배열 연산)
 [Baekjoon no.2783](https://www.acmicpc.net/problem/2783)
+```c
+int main() {
+    int m = 0;
+    int n = 0;
+    scanf("%d %d", &m, &n);
+    getchar();
+
+    int **matrix_one = (int**)malloc(m * sizeof(int*));
+    int **matrix_two = (int**)malloc(m * sizeof(int*));
+    int **matrix_res = (int**)malloc(m * sizeof(int*));
+    for(int i = 0; i < m; i++) matrix_one[i] = (int*)malloc(n * sizeof(int));
+    for(int i = 0; i < m; i++) matrix_two[i] = (int*)malloc(n * sizeof(int));
+    for(int i = 0; i < m; i++) matrix_res[i] = (int*)malloc(n * sizeof(int));
+    
+    for (int i = 0; i < m; i++) {
+        char string[MAX_LENGTH] = "\0"; 
+        fgets(string, MAX_LENGTH, stdin);
+        char *ptr = strtok(string, " \n");
+
+        int j = 0;
+        while (ptr != NULL) {
+            matrix_one[i][j] = atoi(ptr);
+            ptr = strtok(NULL, " \n");
+            j++;
+        }
+    }
+    for (int i = 0; i < m; i++) {
+        char string[MAX_LENGTH] = "\0"; 
+        fgets(string, MAX_LENGTH, stdin);
+        char *ptr = strtok(string, " \n"); 
+
+        int j = 0;
+        while (ptr != NULL) {
+            matrix_two[i][j] = atoi(ptr);
+            ptr = strtok(NULL, " \n");
+            j++;
+        }
+    }
+```
 입력받은 숫자 크기의 2차원 배열을 만들고 fgets()함수로 한 행씩 입력받아 같은 위치의 숫자끼리 연산
 
 ##### 2751(정렬)
