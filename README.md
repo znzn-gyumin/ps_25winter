@@ -1,8 +1,8 @@
 # ps_25winter
 
 ## 목차
-[week 1](#week-1)
-[week 2](#week-2)
+1. [week 1](#week-1)
+2. [week 2](#week-2)
 
 ### week 1
 
